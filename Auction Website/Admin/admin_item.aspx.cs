@@ -7,19 +7,19 @@ using System.Web.UI.WebControls;
 
 namespace Auction_Website.Admin
 {
-    public partial class admin_product : System.Web.UI.Page
+    public partial class admin_item : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void rProduct_ItemCommand(object source, RepeaterCommandEventArgs e)
+        protected void rItem_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
 
         }
 
-        protected void rProduct_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        protected void rItem_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
 
         }

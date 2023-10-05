@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin_masterpage.Master" AutoEventWireup="true" CodeBehind="admin_product.aspx.cs" Inherits="Auction_Website.Admin.admin_product" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin_masterpage.Master" AutoEventWireup="true" CodeBehind="admin_item.aspx.cs" Inherits="Auction_Website.Admin.admin_Item" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <script>
         //alert message
@@ -27,10 +27,10 @@
                                     <div class="row">
 
                                         <div class="col-sm-6 col-md-8 col-lg-4 mobile-inputs">
-                                            <h4 class="sub-title">Products List</h4>
+                                            <h4 class="sub-title">Items List</h4>
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">
-                                                    <asp:Repeater ID="rProduct" runat="server" OnItemCommand="rProduct_ItemCommand" OnItemDataBound="rProduct_ItemDataBound">
+                                                    <asp:Repeater ID="rItem" runat="server" OnItemCommand="rItem_ItemCommand" OnItemDataBound="rItem_ItemDataBound">
                                                         <HeaderTemplate>
                                                             <table class="table data-table-export table-hover nowrap">
                                                                 <thead>

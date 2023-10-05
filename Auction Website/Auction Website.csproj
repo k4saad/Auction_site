@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\admin_dashboard.aspx" />
-    <Content Include="Admin\admin_product.aspx" />
+    <Content Include="Admin\admin_item.aspx" />
     <Content Include="Admin\admin_sign_in.aspx" />
     <Content Include="Admin\admin_category.aspx" />
     <Content Include="datatables\css\dataTables.bootstrap4.min.css" />
@@ -185,6 +185,7 @@
     <Content Include="Seller\seller_item.aspx" />
     <Content Include="Seller\seller_sign_in.aspx" />
     <Content Include="Seller\seller_sign_up.aspx" />
+    <Content Include="Stored procedure query\item_crud.txt" />
     <Content Include="TemplateFiles\css\bootstrap-icons.css" />
     <Content Include="TemplateFiles\css\bootstrap.min.css" />
     <Content Include="TemplateFiles\css\slick.css" />
@@ -240,12 +241,12 @@
     <Compile Include="Admin\admin_masterpage.Master.designer.cs">
       <DependentUpon>admin_masterpage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin\admin_product.aspx.cs">
-      <DependentUpon>admin_product.aspx</DependentUpon>
+    <Compile Include="Admin\admin_item.aspx.cs">
+      <DependentUpon>admin_item.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\admin_product.aspx.designer.cs">
-      <DependentUpon>admin_product.aspx</DependentUpon>
+    <Compile Include="Admin\admin_item.aspx.designer.cs">
+      <DependentUpon>admin_item.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\admin_sign_in.aspx.cs">
       <DependentUpon>admin_sign_in.aspx</DependentUpon>
@@ -377,6 +378,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Item\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

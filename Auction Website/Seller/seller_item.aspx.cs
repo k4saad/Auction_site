@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using Auction_Website.Admin;
 
 namespace Auction_Website.Seller
 {
@@ -24,6 +25,8 @@ namespace Auction_Website.Seller
             if (!IsPostBack)
             {
                 Session["breadCrum"] = "Item";
+                getItem();
+                
             }
         }
 
@@ -34,9 +37,17 @@ namespace Auction_Website.Seller
             int ItemId = Convert.ToInt32(hdnId.Value);
             con = new SqlConnection(Connection.GetConnectionString());
             cmd = new SqlCommand("Item_Crud", con);
-            cmd.Parameters.AddWithValue("@Action", "INSERT");
-            cmd.Parameters.AddWithValue("@Category_id", ItemId);
+            cmd.Parameters.AddWithValue("@Action", ItemId == 0 ? "INSERT" : "UPDATE");
+            cmd.Parameters.AddWithValue("@Item_id", ItemId);
             cmd.Parameters.AddWithValue("@name", txtName.Text.Trim());
+            cmd.Parameters.AddWithValue("@description", txtDescription.Text.Trim());
+            cmd.Parameters.AddWithValue("@seller_id", ddlSellerName.SelectedValue);
+            cmd.Parameters.AddWithValue("@starting_bid", txtStartingBid.Text.Trim());
+            cmd.Parameters.AddWithValue("@minimum_bid_increase", txtMinimumBidIncrease.Text.Trim());
+            cmd.Parameters.AddWithValue("@start_date", calStart.SelectedDate.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@end_date", calEnd.SelectedDate.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@category_id", ddlCategory.SelectedValue);
+
             cmd.CommandType = CommandType.StoredProcedure;
             if (fuItemImage.HasFile)
             {
@@ -45,7 +56,7 @@ namespace Auction_Website.Seller
                     Guid obj = Guid.NewGuid();
                     fileExtension = Path.GetExtension(fuItemImage.FileName);
                     imagePath = "Images/Item/" + obj.ToString() + fileExtension;
-                    fuItemImage.PostedFile.SaveAs(Server.MapPath("~/Images/Category/") + obj.ToString() + fileExtension);
+                    fuItemImage.PostedFile.SaveAs(Server.MapPath("~/Images/Item/") + obj.ToString() + fileExtension);
                     cmd.Parameters.AddWithValue("@ImageUrl", imagePath);
                     isValidToExecute = true;
                 }
@@ -68,11 +79,11 @@ namespace Auction_Website.Seller
                 {
                     con.Open();
                     cmd.ExecuteNonQuery();
-                    actionName = "inserted";
+                    actionName = ItemId == 0 ? "inserted" : "updated";
                     lblMsg.Visible = true;
-                    lblMsg.Text = "Category " + actionName + " successfully!";
+                    lblMsg.Text = "Item " + actionName + " successfully!";
                     lblMsg.CssClass = "alert alert-success";
-                    //getItems();
+                    getItem();
                     clear();
                 }
                 catch (Exception ex)
@@ -92,10 +103,28 @@ namespace Auction_Website.Seller
         private void clear()
         {
             txtName.Text = string.Empty;
+            txtDescription.Text = string.Empty;
+            ddlCategory.ClearSelection();
+            ddlSellerName.ClearSelection();
+            txtMinimumBidIncrease.Text = string.Empty;
+            txtStartingBid.Text = string.Empty;
             hdnId.Value = "0";
             btnAddOrUpdate.Text = "Add";
+            imgItem.ImageUrl = String.Empty;
         }
 
+        private void getItem()
+        {
+            con = new SqlConnection(Connection.GetConnectionString());
+            cmd = new SqlCommand("Item  _Crud", con);
+            cmd.Parameters.AddWithValue("@Action", "SELECT");
+            cmd.CommandType = CommandType.StoredProcedure;
+            sda = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            sda.Fill(dt);
+            rItem.DataSource = dt;
+            rItem.DataBind();
+        }
         protected void rItem_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
 
@@ -104,6 +133,11 @@ namespace Auction_Website.Seller
         protected void rItem_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
 
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
         }
     }
 }
