@@ -1,0 +1,420 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BBE7BAC4-AA99-4C50-AD18-0BB0D9DFC804}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Auction_Website</RootNamespace>
+    <AssemblyName>Auction Website</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\admin_dashboard.aspx" />
+    <Content Include="Admin\admin_product.aspx" />
+    <Content Include="Admin\admin_sign_in.aspx" />
+    <Content Include="Admin\admin_category.aspx" />
+    <Content Include="datatables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="datatables\css\icon-font.min.css" />
+    <Content Include="datatables\css\jquery.dataTables.min.css" />
+    <Content Include="datatables\css\responsive.bootstrap4.min.css" />
+    <Content Include="datatables\css\responsive.dataTables.min.css" />
+    <Content Include="datatables\images\sort_asc.png" />
+    <Content Include="datatables\images\sort_asc_disabled.png" />
+    <Content Include="datatables\images\sort_both.png" />
+    <Content Include="datatables\images\sort_desc.png" />
+    <Content Include="datatables\images\sort_desc_disabled.png" />
+    <Content Include="datatables\js\buttons.bootstrap4.min.js" />
+    <Content Include="datatables\js\buttons.flash.min.js" />
+    <Content Include="datatables\js\buttons.html5.min.js" />
+    <Content Include="datatables\js\buttons.print.min.js" />
+    <Content Include="datatables\js\datatable-setting.js" />
+    <Content Include="datatables\js\dataTables.bootstrap4.min.js" />
+    <Content Include="datatables\js\dataTables.buttons.min.js" />
+    <Content Include="datatables\js\dataTables.responsive.min.js" />
+    <Content Include="datatables\js\jquery.dataTables.min.js" />
+    <Content Include="datatables\js\jszip.min.js" />
+    <Content Include="datatables\js\pdfmake.min.js" />
+    <Content Include="datatables\js\responsive.bootstrap4.min.js" />
+    <Content Include="datatables\js\vfs_fonts.js" />
+    <Content Include="Global.asax" />
+    <Content Include="SellerTemplateFiles\css\animate.css\css\animate.css" />
+    <Content Include="SellerTemplateFiles\css\bootstrap\css\bootstrap.min.css" />
+    <Content Include="SellerTemplateFiles\css\jquery.mCustomScrollbar.css" />
+    <Content Include="SellerTemplateFiles\css\morris.js\css\morris.css" />
+    <Content Include="SellerTemplateFiles\css\style.css" />
+    <Content Include="SellerTemplateFiles\icon\icofont\css\icofont.css" />
+    <Content Include="SellerTemplateFiles\icon\icofont\fonts\icofont.svg" />
+    <Content Include="SellerTemplateFiles\icon\themify-icons\fonts\themify.svg" />
+    <Content Include="SellerTemplateFiles\icon\themify-icons\themify-icons.css" />
+    <Content Include="SellerTemplateFiles\images\auth\logo-dark.png" />
+    <Content Include="SellerTemplateFiles\images\auth\Logo-small-bottom.png" />
+    <Content Include="SellerTemplateFiles\images\auth\logo.png" />
+    <Content Include="SellerTemplateFiles\images\avatar-1.jpg" />
+    <Content Include="SellerTemplateFiles\images\avatar-2.jpg" />
+    <Content Include="SellerTemplateFiles\images\avatar-3.jpg" />
+    <Content Include="SellerTemplateFiles\images\avatar-4.jpg" />
+    <Content Include="SellerTemplateFiles\images\bg.jpg" />
+    <Content Include="SellerTemplateFiles\images\favicon.ico" />
+    <Content Include="SellerTemplateFiles\images\flags\ENGLISH.jpg" />
+    <Content Include="SellerTemplateFiles\images\flags\FRANCE.jpg" />
+    <Content Include="SellerTemplateFiles\images\flags\PORTO.jpg" />
+    <Content Include="SellerTemplateFiles\images\flags\SPAIN.jpg" />
+    <Content Include="SellerTemplateFiles\images\logo.png" />
+    <Content Include="SellerTemplateFiles\images\mega-menu\01.jpg" />
+    <Content Include="SellerTemplateFiles\images\mega-menu\02.jpg" />
+    <Content Include="SellerTemplateFiles\images\mega-menu\03.jpg" />
+    <Content Include="SellerTemplateFiles\images\mega-menu\04.jpg" />
+    <Content Include="SellerTemplateFiles\images\mega-menu\05.jpg" />
+    <Content Include="SellerTemplateFiles\images\mega-menu\06.jpg" />
+    <Content Include="SellerTemplateFiles\images\pattern2.jpg" />
+    <Content Include="SellerTemplateFiles\images\user.png" />
+    <Content Include="SellerTemplateFiles\js\bootstrap-growl.min.js" />
+    <Content Include="SellerTemplateFiles\js\bootstrap\js\bootstrap.min.js" />
+    <Content Include="SellerTemplateFiles\js\classie.js" />
+    <Content Include="SellerTemplateFiles\js\classie\classie.js" />
+    <Content Include="SellerTemplateFiles\js\common-pages.js" />
+    <Content Include="SellerTemplateFiles\js\demo-12.js" />
+    <Content Include="SellerTemplateFiles\js\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="SellerTemplateFiles\js\jquery-ui\jquery-ui.min.js" />
+    <Content Include="SellerTemplateFiles\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="SellerTemplateFiles\js\jquery.mousewheel.min.js" />
+    <Content Include="SellerTemplateFiles\js\jquery\jquery.min.js" />
+    <Content Include="SellerTemplateFiles\js\modernizr\css-scrollbars.js" />
+    <Content Include="SellerTemplateFiles\js\modernizr\modernizr.js" />
+    <Content Include="SellerTemplateFiles\js\morris.js\morris.js" />
+    <Content Include="SellerTemplateFiles\js\pcoded.min.js" />
+    <Content Include="SellerTemplateFiles\js\popper.js\popper.min.js" />
+    <Content Include="SellerTemplateFiles\js\raphael\raphael.min.js" />
+    <Content Include="SellerTemplateFiles\js\script.js" />
+    <Content Include="SellerTemplateFiles\js\script.min.js" />
+    <Content Include="SellerTemplateFiles\js\SmoothScroll.js" />
+    <Content Include="SellerTemplateFiles\pages\accordion\accordion.js" />
+    <Content Include="SellerTemplateFiles\pages\accordion\accordion.min.js" />
+    <Content Include="SellerTemplateFiles\pages\chart\morris\morris-custom-chart.js" />
+    <Content Include="SellerTemplateFiles\pages\dashboard\amchart\css\amchart.css" />
+    <Content Include="SellerTemplateFiles\pages\dashboard\amchart\css\export.css" />
+    <Content Include="SellerTemplateFiles\pages\dashboard\amchart\js\amcharts.js" />
+    <Content Include="SellerTemplateFiles\pages\dashboard\amchart\js\custom-amchart.js" />
+    <Content Include="SellerTemplateFiles\pages\dashboard\amchart\js\export.min.js" />
+    <Content Include="SellerTemplateFiles\pages\dashboard\amchart\js\images\dragIconRoundBig.svg" />
+    <Content Include="SellerTemplateFiles\pages\dashboard\amchart\js\images\dragIconRoundBigH.svg" />
+    <Content Include="SellerTemplateFiles\pages\dashboard\amchart\js\light.js" />
+    <Content Include="SellerTemplateFiles\pages\dashboard\amchart\js\serial.js" />
+    <Content Include="SellerTemplateFiles\pages\dashboard\custom-dashboard.js" />
+    <Content Include="SellerTemplateFiles\pages\google-maps\gmaps.min.js" />
+    <Content Include="SellerTemplateFiles\pages\google-maps\jquery.gmaps.js" />
+    <Content Include="SellerTemplateFiles\pages\icon-modal.js" />
+    <Content Include="SellerTemplateFiles\pages\notification\notification.css" />
+    <Content Include="SellerTemplateFiles\pages\notification\notification.js" />
+    <Content Include="SellerTemplateFiles\pages\todo\todo.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\amcharts.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\amcharts.min.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\ammap.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\ammap.min.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\continentsLow.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\continentsLow.min.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\gauge.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\gauge.min.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\light.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\light.min.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\pie.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\pie.min.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\serial.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\serial.min.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\worldLow.js" />
+    <Content Include="SellerTemplateFiles\pages\widget\amchart\worldLow.min.js" />
+    <Content Include="Seller\seller_dashboard.aspx" />
+    <Content Include="Seller\seller_item.aspx" />
+    <Content Include="Seller\seller_sign_in.aspx" />
+    <Content Include="Seller\seller_sign_up.aspx" />
+    <Content Include="TemplateFiles\css\bootstrap-icons.css" />
+    <Content Include="TemplateFiles\css\bootstrap.min.css" />
+    <Content Include="TemplateFiles\css\slick.css" />
+    <Content Include="TemplateFiles\css\tooplate-little-fashion.css" />
+    <Content Include="TemplateFiles\images\Auction_seller.jpeg" />
+    <Content Include="TemplateFiles\images\auction_work.png" />
+    <Content Include="TemplateFiles\images\christies-auction.jpg" />
+    <Content Include="TemplateFiles\images\cody-lannom-G95AReIh_Ko-unsplash.jpeg" />
+    <Content Include="TemplateFiles\images\header\businesspeople-meeting-office-working.jpg" />
+    <Content Include="TemplateFiles\images\header\positive-european-woman-has-break-after-work.jpg" />
+    <Content Include="TemplateFiles\images\people\beautiful-woman-face-portrait-brown-background.jpeg" />
+    <Content Include="TemplateFiles\images\people\portrait-british-woman.jpeg" />
+    <Content Include="TemplateFiles\images\people\senior-man-wearing-white-face-mask-covid-19-campaign-with-design-space.jpeg" />
+    <Content Include="TemplateFiles\images\people\woman-wearing-mask-face-closeup-covid-19-green-background.jpeg" />
+    <Content Include="TemplateFiles\images\pim-chu-z6NZ76_UTDI-unsplash.jpeg" />
+    <Content Include="TemplateFiles\images\product\anis-m-WnVrO-DvxcE-unsplash.jpeg" />
+    <Content Include="TemplateFiles\images\product\evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" />
+    <Content Include="TemplateFiles\images\product\jordan-nix-CkCUvwMXAac-unsplash.jpeg" />
+    <Content Include="TemplateFiles\images\product\nature-zen-3Dn1BZZv3m8-unsplash.jpeg" />
+    <Content Include="TemplateFiles\images\product\quokkabottles-kFc1_G1GvKA-unsplash.jpeg" />
+    <Content Include="TemplateFiles\images\product\team-fredi-8HRKoay8VJE-unsplash.jpeg" />
+    <Content Include="TemplateFiles\images\retail-shop-owner-mask-social-distancing-shopping.jpg" />
+    <Content Include="TemplateFiles\images\servicescape-incorporated-_48JSlVLX6g-unsplash.jpeg" />
+    <Content Include="TemplateFiles\images\slideshow\medium-shot-business-women-high-five.jpeg" />
+    <Content Include="TemplateFiles\images\slideshow\team-meeting-renewable-energy-project.jpeg" />
+    <Content Include="TemplateFiles\images\slideshow\two-business-partners-working-together-office-computer.jpeg" />
+    <Content Include="TemplateFiles\js\bootstrap.bundle.min.js" />
+    <Content Include="TemplateFiles\js\custom.js" />
+    <Content Include="TemplateFiles\js\Headroom.js" />
+    <Content Include="TemplateFiles\js\jQuery.headroom.js" />
+    <Content Include="TemplateFiles\js\jquery.min.js" />
+    <Content Include="TemplateFiles\js\slick.min.js" />
+    <Content Include="User\index.aspx" />
+    <Content Include="User\items.aspx" />
+    <Content Include="User\item_detail.aspx" />
+    <Content Include="User\my_orders.aspx" />
+    <Content Include="User\user_sign_in.aspx" />
+    <Content Include="User\user_sign_up.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\admin_dashboard.aspx.cs">
+      <DependentUpon>admin_dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin_dashboard.aspx.designer.cs">
+      <DependentUpon>admin_dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin_masterpage.Master.cs">
+      <DependentUpon>admin_masterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin_masterpage.Master.designer.cs">
+      <DependentUpon>admin_masterpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin_product.aspx.cs">
+      <DependentUpon>admin_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin_product.aspx.designer.cs">
+      <DependentUpon>admin_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin_sign_in.aspx.cs">
+      <DependentUpon>admin_sign_in.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin_sign_in.aspx.designer.cs">
+      <DependentUpon>admin_sign_in.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin_category.aspx.cs">
+      <DependentUpon>admin_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin_category.aspx.designer.cs">
+      <DependentUpon>admin_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seller\seller_dashboard.aspx.cs">
+      <DependentUpon>seller_dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seller\seller_dashboard.aspx.designer.cs">
+      <DependentUpon>seller_dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seller\seller_masterpage.Master.cs">
+      <DependentUpon>seller_masterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seller\seller_masterpage.Master.designer.cs">
+      <DependentUpon>seller_masterpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Seller\seller_item.aspx.cs">
+      <DependentUpon>seller_item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seller\seller_item.aspx.designer.cs">
+      <DependentUpon>seller_item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seller\seller_sign_in.aspx.cs">
+      <DependentUpon>seller_sign_in.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seller\seller_sign_in.aspx.designer.cs">
+      <DependentUpon>seller_sign_in.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seller\seller_sign_up.aspx.cs">
+      <DependentUpon>seller_sign_up.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seller\seller_sign_up.aspx.designer.cs">
+      <DependentUpon>seller_sign_up.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\items.aspx.cs">
+      <DependentUpon>items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\items.aspx.designer.cs">
+      <DependentUpon>items.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\item_detail.aspx.cs">
+      <DependentUpon>item_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\item_detail.aspx.designer.cs">
+      <DependentUpon>item_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\masterPage.Master.cs">
+      <DependentUpon>masterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\masterPage.Master.designer.cs">
+      <DependentUpon>masterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="User\my_orders.aspx.cs">
+      <DependentUpon>my_orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\my_orders.aspx.designer.cs">
+      <DependentUpon>my_orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\user_sign_in.aspx.cs">
+      <DependentUpon>user_sign_in.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\user_sign_in.aspx.designer.cs">
+      <DependentUpon>user_sign_in.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\user_sign_up.aspx.cs">
+      <DependentUpon>user_sign_up.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\user_sign_up.aspx.designer.cs">
+      <DependentUpon>user_sign_up.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\admin_masterpage.Master" />
+    <Content Include="datatables\fonts\ionicons.ttf" />
+    <Content Include="datatables\fonts\ionicons.woff" />
+    <Content Include="datatables\fonts\themify.ttf" />
+    <Content Include="datatables\fonts\themify.woff" />
+    <None Include="packages.config" />
+    <Content Include="User\masterPage.Master" />
+    <Content Include="TemplateFiles\fonts\bootstrap-icons.woff" />
+    <Content Include="TemplateFiles\fonts\bootstrap-icons.woff2" />
+    <Content Include="Seller\seller_masterpage.Master" />
+    <Content Include="SellerTemplateFiles\icon\icofont\fonts\icofont.eot" />
+    <Content Include="SellerTemplateFiles\icon\icofont\fonts\icofont.ttf" />
+    <Content Include="SellerTemplateFiles\icon\icofont\fonts\icofont.woff" />
+    <Content Include="SellerTemplateFiles\icon\themify-icons\fonts\themify.eot" />
+    <Content Include="SellerTemplateFiles\icon\themify-icons\fonts\themify.ttf" />
+    <Content Include="SellerTemplateFiles\icon\themify-icons\fonts\themify.woff" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60311</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60311/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

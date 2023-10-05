@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterPage.master.cs" Inherits="Auction_Website.User.masterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bids Bay</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+    <link href="../TemplateFiles/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../TemplateFiles/css/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../TemplateFiles/css/slick.css" />
+
+    <link href="../TemplateFiles/css/tooplate-little-fashion.css" rel="stylesheet">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand" href="index.aspx">
+                    <strong><span>Bids</span> Bay</strong>
+                </a>
+
+                <div class="d-lg-none">
+                    <a href="user_sign_in.aspx" class="bi-person custom-icon me-3"></a>
+
+                    <a href="my_orders.aspx" class="bi-bag custom-icon"></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.aspx">Home</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="items.aspx">Items</a>
+                        </li>
+
+                    </ul>
+
+                    <div class="d-none d-lg-block">
+                        <a href="user_sign_in.aspx" class="bi-person custom-icon me-3"></a>
+
+                        <a href="my_orders.aspx" class="bi-bag custom-icon"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-10 me-auto mb-4">
+                        <h4 class="text-white mb-3"><a href="index.aspx">Bids</a> Bay</h4>
+                        <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">Copyright © 2023 <strong>Bids Bay</strong></p>
+                        <br>
+                        <p class="copyright-text">Created by <a href="https://www.tooplate.com/" target="_blank">Saad</a></p>
+                    </div>
+
+
+                    <div class="col-lg-3 col-4">
+                        <h5 class="text-white mb-3">Social</h5>
+
+                        <ul class="social-icon">
+
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </form>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="../TemplateFiles/js/jquery.min.js"></script>
+    <script src="../TemplateFiles/js/bootstrap.bundle.min.js"></script>
+    <script src="../TemplateFiles/js/Headroom.js"></script>
+    <script src="../TemplateFiles/js/jQuery.headroom.js"></script>
+    <script src="../TemplateFiles/js/slick.min.js"></script>
+    <script src="../TemplateFiles/js/custom.js"></script>
+
+</body>
+</html>
