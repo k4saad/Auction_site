@@ -47,7 +47,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-6 col-md-8 col-lg-4 mobile-inputs">
+                                        <div class="col-sm-6 col-md-8 mobile-inputs">
                                             <h4 class="sub-title">Category List</h4>
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">

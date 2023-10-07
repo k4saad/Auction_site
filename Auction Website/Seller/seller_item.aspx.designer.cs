@@ -11,7 +11,7 @@ namespace Auction_Website.Seller
 {
 
 
-    public partial class seller_Item
+    public partial class seller_item
     {
 
         /// <summary>
@@ -67,15 +67,6 @@ namespace Auction_Website.Seller
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-
-        /// <summary>
-        /// fuItemImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuItemImage;
 
         /// <summary>
         /// ddlSellerName control.
@@ -195,15 +186,6 @@ namespace Auction_Website.Seller
         protected global::System.Web.UI.WebControls.Calendar calStart;
 
         /// <summary>
-        /// RequiredFieldValidator7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
-
-        /// <summary>
         /// calEnd control.
         /// </summary>
         /// <remarks>
@@ -213,13 +195,13 @@ namespace Auction_Website.Seller
         protected global::System.Web.UI.WebControls.Calendar calEnd;
 
         /// <summary>
-        /// RequiredFieldValidator8 control.
+        /// fuItemImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
+        protected global::System.Web.UI.WebControls.FileUpload fuItemImage;
 
         /// <summary>
         /// btnAddOrUpdate control.

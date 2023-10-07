@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title>Bids Bay - Seller </title>
+    <title>Bids Bay - Admin </title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -96,7 +96,7 @@
                                 <i class="ti-menu"></i>
                             </a>
                             <a href="index.html">
-                                <img class="img-fluid" src="../SellerTemplateFiles/images/logo.png" alt="Theme-Logo" />
+                                <img class="img-fluid" src="../SellerTemplateFiles/images/Bids_bay_logo.png" alt="Theme-Logo" />
                             </a>
                             <a class="mobile-options">
                                 <i class="ti-more"></i>
@@ -118,8 +118,8 @@
                             <ul class="nav-right">
                                 <li class="user-profile header-notification">
                                     <a href="#!">
-                                        <img src="../SellerTemplateFiles/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                        <span>John Doe</span>
+                                        <img src="../SellerTemplateFiles/images/cat-pfp.png" class="img-radius" alt="User-Profile-Image">
+                                        <span>Saad Khan</span>
                                         <i class="ti-angle-down"></i>
                                     </a>
                                     <ul class="show-notification profile-notification">
@@ -160,19 +160,19 @@
                                     </li>
                                 </ul>
 
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Product</div>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Item</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
-                                        <a href="chart.html">
+                                        <a href="admin_item.aspx">
                                             <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Product</span>
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Item</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
 
                                 </ul>
 
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Product Delivery Status</div>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Item Delivery Status</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
                                         <a href="chart.html">
@@ -189,7 +189,7 @@
                                     <li>
                                         <a href="chart.html">
                                             <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Contact</span>
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Feedback</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>

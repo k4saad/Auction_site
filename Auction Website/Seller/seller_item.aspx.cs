@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO;
-using Auction_Website.Admin;
 
 namespace Auction_Website.Seller
 {
-    public partial class seller_Item : System.Web.UI.Page
+    public partial class seller_item : System.Web.UI.Page
     {
-
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter sda;
@@ -26,7 +23,7 @@ namespace Auction_Website.Seller
             {
                 Session["breadCrum"] = "Item";
                 getItem();
-                
+
             }
         }
 
@@ -66,7 +63,7 @@ namespace Auction_Website.Seller
                     lblMsg.Text = "Please select .jpg, .jpeg or .png image";
                     lblMsg.CssClass = "alert alert-danger";
                     isValidToExecute = true;
-                }                    
+                }
             }
             else
             {
@@ -116,7 +113,7 @@ namespace Auction_Website.Seller
         private void getItem()
         {
             con = new SqlConnection(Connection.GetConnectionString());
-            cmd = new SqlCommand("Item  _Crud", con);
+            cmd = new SqlCommand("Item_Crud", con);
             cmd.Parameters.AddWithValue("@Action", "SELECT");
             cmd.CommandType = CommandType.StoredProcedure;
             sda = new SqlDataAdapter(cmd);
@@ -125,15 +122,74 @@ namespace Auction_Website.Seller
             rItem.DataSource = dt;
             rItem.DataBind();
         }
+
+            
         protected void rItem_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            lblMsg.Visible = false;
+            con = new SqlConnection(Connection.GetConnectionString());
+            if (e.CommandName == "edit")
+            {
+                cmd = new SqlCommand("Item_Crud", con);
+                cmd.Parameters.AddWithValue("@Action", "GETBYID");
+                cmd.Parameters.AddWithValue("@Item_id", e.CommandArgument);
+                cmd.CommandType = CommandType.StoredProcedure;
+                sda = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                sda.Fill(dt);
+                txtName.Text = dt.Rows[0]["Name"].ToString();
+                txtDescription.Text = dt.Rows[0]["Description"].ToString();
+                txtStartingBid.Text = dt.Rows[0]["Starting_bid"].ToString();
+                txtMinimumBidIncrease.Text = dt.Rows[0]["Minimum_bid_increase"].ToString();
+                ddlCategory.SelectedValue = dt.Rows[0]["Category_id"].ToString();
+                ddlSellerName.SelectedValue = dt.Rows[0]["Seller_id"].ToString();
 
+
+                imgItem.ImageUrl = string.IsNullOrEmpty(dt.Rows[0]["ImageUrl"].ToString()) ? "../Images/No_image.png" : "../" + dt.Rows[0]["ImageUrl"].ToString();
+                imgItem.Height = 200;
+                imgItem.Width = 200;
+                hdnId.Value = dt.Rows[0]["Item_id"].ToString();
+                btnAddOrUpdate.Text = "Update";
+                LinkButton btn = e.Item.FindControl("lnkEdit") as LinkButton;
+                btn.CssClass = "badge badge-warning";
+            }
+            else if (e.CommandName == "delete")
+            {
+                cmd = new SqlCommand("Item_Crud", con);
+
+                cmd.Parameters.AddWithValue("@Action", "DELETE");
+                cmd.Parameters.AddWithValue("@Item_id", e.CommandArgument);
+                cmd.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Item deleted successfully!";
+                    lblMsg.CssClass = "alert alert-success";
+                    getItem();
+                }
+                catch (Exception ex)
+                {
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Error - " + ex.Message;
+                    lblMsg.CssClass = "alert alert-danger";
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
 
-        protected void rItem_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-
-        }
+        //protected void rItem_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        //{
+        //    if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+        //    {
+        //        Label lblActive = e.Item.FindControl("lblIsActive") as Label;
+        //        if(calStart.)
+        //    }
+        //}
 
         protected void btnClear_Click(object sender, EventArgs e)
         {

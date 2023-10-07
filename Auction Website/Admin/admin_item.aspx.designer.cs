@@ -11,7 +11,7 @@ namespace Auction_Website.Admin
 {
 
 
-    public partial class admin_Item
+    public partial class admin_item1
     {
 
         /// <summary>

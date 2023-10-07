@@ -112,6 +112,8 @@
     <Content Include="SellerTemplateFiles\images\avatar-3.jpg" />
     <Content Include="SellerTemplateFiles\images\avatar-4.jpg" />
     <Content Include="SellerTemplateFiles\images\bg.jpg" />
+    <Content Include="SellerTemplateFiles\images\Bids_bay_logo.png" />
+    <Content Include="SellerTemplateFiles\images\cat-pfp.png" />
     <Content Include="SellerTemplateFiles\images\favicon.ico" />
     <Content Include="SellerTemplateFiles\images\flags\ENGLISH.jpg" />
     <Content Include="SellerTemplateFiles\images\flags\FRANCE.jpg" />
@@ -234,19 +236,19 @@
     <Compile Include="Admin\admin_dashboard.aspx.designer.cs">
       <DependentUpon>admin_dashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\admin_masterpage.Master.cs">
-      <DependentUpon>admin_masterpage.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\admin_masterpage.Master.designer.cs">
-      <DependentUpon>admin_masterpage.Master</DependentUpon>
-    </Compile>
     <Compile Include="Admin\admin_item.aspx.cs">
       <DependentUpon>admin_item.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\admin_item.aspx.designer.cs">
       <DependentUpon>admin_item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin_masterpage.Master.cs">
+      <DependentUpon>admin_masterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin_masterpage.Master.designer.cs">
+      <DependentUpon>admin_masterpage.Master</DependentUpon>
     </Compile>
     <Compile Include="Admin\admin_sign_in.aspx.cs">
       <DependentUpon>admin_sign_in.aspx</DependentUpon>
@@ -274,19 +276,19 @@
     <Compile Include="Seller\seller_dashboard.aspx.designer.cs">
       <DependentUpon>seller_dashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Seller\seller_masterpage.Master.cs">
-      <DependentUpon>seller_masterpage.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Seller\seller_masterpage.Master.designer.cs">
-      <DependentUpon>seller_masterpage.Master</DependentUpon>
-    </Compile>
     <Compile Include="Seller\seller_item.aspx.cs">
       <DependentUpon>seller_item.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Seller\seller_item.aspx.designer.cs">
       <DependentUpon>seller_item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seller\seller_masterpage.Master.cs">
+      <DependentUpon>seller_masterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seller\seller_masterpage.Master.designer.cs">
+      <DependentUpon>seller_masterpage.Master</DependentUpon>
     </Compile>
     <Compile Include="Seller\seller_sign_in.aspx.cs">
       <DependentUpon>seller_sign_in.aspx</DependentUpon>
