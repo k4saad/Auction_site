@@ -7,8 +7,8 @@ CREATE PROCEDURE [dbo].[Item_Crud]
     @seller_id INT = NULL,
     @starting_bid DECIMAL(18,2) = 0,
     @minimum_bid_increase DECIMAL(18,2) = 0,
-    @start_date DATE NULL,
-    @end_date DATE NULL,
+    @start_date DATE = NULL,
+    @end_date DATE = NULL,
     @category_id INT = NULL
 	
 AS
@@ -19,14 +19,14 @@ BEGIN
 	IF @Aciton = 'SELECT'
 	BEGIN
 		SELECT i.*, c.name AS CategoryName FROM dbo.Item i
-		INNER JOIN dbo.Category c ON c.Category_id = i.Category_id WHERE i.Seller_id = @seller_id ORDER BY i.Item_id
+		INNER JOIN dbo.Category c ON c.Category_id = i.Category_id ORDER BY i.Item_id
 	END
 
 	--INSERT
 	IF @Aciton = 'INSERT'
 		BEGIN
-			INSERT INTO dbo.Item(Name, Description, ImageUrl, Seller_id, Starting_bid, Minimum_bid_increase, Start_date, End_date)
-			VALUES(@name, @description, @ImageUrl, @seller_id, @starting_bid, @minimum_bid_increase, @start_date, @end_date)
+			INSERT INTO dbo.Item(Name, Description, ImageUrl, Seller_id, Starting_bid, Minimum_bid_increase, Start_date, End_date,Category_id)
+			VALUES(@name, @description, @ImageUrl, @seller_id, @starting_bid, @minimum_bid_increase, @start_date, @end_date,@category_id)
 		END
 
 	--UPDATE
@@ -38,23 +38,23 @@ BEGIN
 				BEGIN
 					UPDATE dbo.Item
 					SET NAME = @name , Description = @description, Seller_id = @seller_id, Starting_bid = @starting_bid,
-					Minimum_bid_increase = @minimum_bid_increase, Start_date = @start_date, End_date = @end_date
+					Minimum_bid_increase = @minimum_bid_increase, Start_date = @start_date, End_date = @end_date, Category_id = @category_id
 				END
 			ELSE
 				BEGIN
 					UPDATE dbo.Item
 					SET NAME = @name , Description = @description, ImageUrl = @ImageUrl, Seller_id = @seller_id, Starting_bid = @starting_bid,
-					Minimum_bid_increase = @minimum_bid_increase, Start_date = @start_date, End_date = @end_date
+					Minimum_bid_increase = @minimum_bid_increase, Start_date = @start_date, End_date = @end_date, Category_id = @category_id
 				END
 		END
 
 	
 	IF @Aciton = 'DELETE'
 		BEGIN
-			DELETE FROM dbo.Item WHERE Item_id = @Item_id AND Seller_id = @seller_id
+			DELETE FROM dbo.Item WHERE Item_id = @Item_id
 		END
 	IF @Aciton = 'GETBYID'
 		BEGIN 
-			SELECT * FROM dbo.Item where Item_id = @Item_id AND Seller_id = @seller_id
+			SELECT * FROM dbo.Item where Item_id = @Item_id
 		END
 END

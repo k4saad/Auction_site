@@ -1,0 +1,42 @@
+CREATE PROCEDURE [dbo].[Seller_Crud]
+	@Action VARCHAR(20),
+	@seller_id INT = NULL,
+	@name VARCHAR(50) = NULL,
+	@username VARCHAR(50) = NULL,
+	@phone VARCHAR(50) = NULL,
+	@email VARCHAR(50) = NULL,
+	@password VARCHAR(50) = NULL,
+	@imageUrl varchar(MAX) = NULL
+AS
+BEGIN
+	SET NOCOUNT ON;
+	--SELECT FOR LOGIN
+	IF @Action = 'SELECT4LOGIN'
+		BEGIN
+			SELECT * FROM dbo.Seller WHERE Username = @username AND Password = @password
+		END
+	
+	--SELECT FOR USER PROFILE
+	IF @Action = 'SELECT4PROFILE'
+		BEGIN
+			SELECT * FROM dbo.Seller WHERE Seller_id = @seller_id
+		END
+	
+	--Insert
+	IF @Action = 'INSERT'
+		BEGIN
+			INSERT INTO dbo.Seller(Name, Phone, Email, Username, Password, ImageUrl)
+			VALUES(@name, @phone, @email, @username, @password, @imageUrl)
+		END
+	IF @Action = 'SELECT4ADMIN'
+		BEGIN
+			SELECT ROW_NUMBER() OVER(ORDER BY(SELECT 1)) AS [SrNO],Seller_id,Name,Username, Email
+			FROM Seller
+		END
+	IF @Action = 'DELETE'
+		BEGIN 
+			DELETE FROM dbo.Seller WHERE Seller_id = @seller_id
+		END
+END
+GO
+

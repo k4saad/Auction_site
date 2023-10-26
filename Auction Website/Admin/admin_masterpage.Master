@@ -172,12 +172,24 @@
 
                                 </ul>
 
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Item Delivery Status</div>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Seller</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
-                                        <a href="chart.html">
+                                        <a href="admin_seller.aspx">
                                             <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Update Status</span>
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Seller</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Buyer</div>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li>
+                                        <a href="admin_buyer.aspx">
+                                            <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Buyer</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>

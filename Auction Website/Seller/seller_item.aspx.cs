@@ -62,7 +62,7 @@ namespace Auction_Website.Seller
                     lblMsg.Visible = true;
                     lblMsg.Text = "Please select .jpg, .jpeg or .png image";
                     lblMsg.CssClass = "alert alert-danger";
-                    isValidToExecute = true;
+                    isValidToExecute = false;
                 }
             }
             else
