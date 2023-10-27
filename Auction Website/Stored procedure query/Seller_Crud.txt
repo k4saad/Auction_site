@@ -1,4 +1,11 @@
-CREATE PROCEDURE [dbo].[Seller_Crud]
+USE [AuctionDB]
+GO
+/****** Object:  StoredProcedure [dbo].[Seller_Crud]    Script Date: 10/27/2023 12:09:48 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[Seller_Crud]
 	@Action VARCHAR(20),
 	@seller_id INT = NULL,
 	@name VARCHAR(50) = NULL,
@@ -38,5 +45,3 @@ BEGIN
 			DELETE FROM dbo.Seller WHERE Seller_id = @seller_id
 		END
 END
-GO
-

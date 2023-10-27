@@ -15,6 +15,10 @@ namespace Auction_Website.Seller
             {
                 Session["breadCrum"] = "";
             }
+            if (Session["SellerId"] == null)
+            {
+                Response.Redirect("seller_sign_in.aspx");
+            }
         }
     }
 }

@@ -1,0 +1,38 @@
+USE [AuctionDB]
+GO
+/****** Object:  StoredProcedure [dbo].[Category_Crud]    Script Date: 10/27/2023 12:11:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[Category_Crud] 
+	-- Add the parameters for the stored procedure here
+	@Action VARCHAR(10),
+	@Category_id INT = NULL,
+	@name VARCHAR(100) = NULL
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	IF @Action = 'SELECT'
+		BEGIN
+			SELECT * FROM dbo.Category ORDER BY Category_id ASC
+		END
+
+	IF @Action = 'INSERT'
+	BEGIN
+		INSERT INTO dbo.category(name)
+		VALUES (@name)
+	END
+
+	IF @Action = 'DELETE'
+		BEGIN
+			DELETE FROM dbo.Category WHERE Category_id = @Category_id
+		END
+	IF @Action = 'GETBYID'
+		BEGIN
+			SELECT * FROM dbo.Category WHERE Category_id = @Category_id
+		END
+END

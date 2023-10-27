@@ -20,7 +20,14 @@ namespace Auction_Website.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["breadCrum"] = "Item";
-            getItem();
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("../User/user_sign_in.aspx");
+            }
+            else
+            {
+                getItem();
+            }
         }
 
         protected void rItem_ItemCommand(object source, RepeaterCommandEventArgs e)

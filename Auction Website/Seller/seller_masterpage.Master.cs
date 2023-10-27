@@ -13,5 +13,10 @@ namespace Auction_Website.Seller
         {
 
         }
+        protected void lbLogout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("seller_sign_in.aspx");
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/masterPage.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Auction_Website.User.index" %>
-
+<%@ Import Namespace="Auction_Website" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -113,88 +113,37 @@
 
     <section class="featured-product section-padding">
         <div class="container">
+            <div class="col-12 text-center">
+                <h2 class="mb-5">Live Items</h2>
+            </div>
             <div class="row">
-
-                <div class="col-12 text-center">
-                    <h2 class="mb-5">Live Items</h2>
-                </div>
-
-                <div class="col-lg-4 col-12 mb-3">
+                <asp:Repeater ID="rItem" runat="server">
+                    <ItemTemplate>
+                    <div class="col-lg-4 col-12 mb-3">
                     <div class="product-thumb">
                         <a href="item_detail.aspx">
-                            <img src="../TemplateFiles/images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt="">
+                            <img src="../<%# Utils.GetImageUrl(Eval("ImageUrl")) %>" class="img-fluid product-image" alt="">
                         </a>
 
                         <div class="product-top d-flex">
-                            <span class="product-alert me-auto">New Arrival</span>
-
-                            <a href="#" class="bi-heart-fill product-icon"></a>
+                            <span class="product-alert me-auto">Live</span>
                         </div>
 
                         <div class="product-info d-flex">
                             <div>
                                 <h5 class="product-title mb-0">
-                                    <a href="item_detail.aspx" class="product-title-link">Tree pot</a>
+                                    <a href="item_detail.aspx" class="product-title-link"><%# Eval("Name") %></a>
                                 </h5>
 
-                                <p class="product-p"><b>Seller :</b> Saad </p>
-                                <small class="product-price text-muted ms-auto mt-auto mb-5">Starting Price : ₹250</small>
-
+                                <p class="product-p"><b>Seller : </b><%# Eval("SellerName") %></p>
+                                <small class="product-price text-muted ms-auto mt-auto mb-5">Starting Bid : ₹<%#Eval("Starting_bid") %></small>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-12 mb-3">
-                    <div class="product-thumb">
-                        <a href="item_detail.aspx">
-                            <img src="../TemplateFiles/images/product/jordan-nix-CkCUvwMXAac-unsplash.jpeg" class="img-fluid product-image" alt="">
-                        </a>
-
-                        <div class="product-top d-flex">
-                            <span class="product-alert">Low Price</span>
-
-                            <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-                        </div>
-
-                        <div class="product-info d-flex">
-                            <div>
-                                <h5 class="product-title mb-0">
-                                    <a href="item_detail.aspx" class="product-title-link">Jumper</a>
-                                </h5>
-
-                                <p class="product-p"><b>Seller :</b> Saad </p>
-                                <small class="product-price text-muted ms-auto mt-auto mb-5">Starting Price : ₹1000</small>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-12">
-                    <div class="product-thumb">
-                        <a href="item_detail.aspx">
-                            <img src="../TemplateFiles/images/product/nature-zen-3Dn1BZZv3m8-unsplash.jpeg" class="img-fluid product-image" alt="">
-                        </a>
-
-                        <div class="product-top d-flex">
-                            <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-                        </div>
-
-                        <div class="product-info d-flex">
-                            <div>
-                                <h5 class="product-title mb-0">
-                                    <a href="item_detail.aspx" class="product-title-link">Fruits Capsules</a>
-                                </h5>
-                                <p class="product-p"><b>Seller :</b> Saad</p>
-                                <small class="product-price text-muted ms-auto mt-auto mb-5">Starting Price : ₹100</small>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
+                    </ItemTemplate>
+                </asp:Repeater>
+                
                 <div class="col-12 text-center">
                     <a href="items.aspx" class="view-all">View All Items</a>
                 </div>

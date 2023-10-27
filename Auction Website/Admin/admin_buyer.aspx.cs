@@ -20,7 +20,15 @@ namespace Auction_Website.Admin
             if (!IsPostBack)
             {
                 Session["breadCrum"] = "Buyer";
-                getBuyer();
+                if (Session["admin"] == null)
+                {
+                    Response.Redirect("../User/user_sign_in.aspx");
+                }
+                else
+                {
+                    getBuyer();
+
+                }
             }
         }
 

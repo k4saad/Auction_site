@@ -59,19 +59,7 @@
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Description is required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtDescription"></asp:RequiredFieldValidator>
                                                         
                                                     </div>
-                                                </div>
-                                                 
-                                                
-                                                <div class="form-group">
-                                                    <label>Seller Name</label>
-                                                    <div>                                                  
-                                                        <asp:DropDownList ID="ddlSellerName" runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="SqlDataSource2" DataTextField="Name" DataValueField="Seller_id">
-                                                            <asp:ListItem Value="0">Select Seller</asp:ListItem>
-                                                        </asp:DropDownList>
-                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Seller is required" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="ddlSellerName" InitialValue="0"></asp:RequiredFieldValidator>
-                                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="SELECT [Seller_id], [Name] FROM [Seller]"></asp:SqlDataSource>
-                                                    </div>
-                                                </div>
+                                                </div> 
 
                                                 <div class="form-group">
                                                     <label>Starting Bid</label>

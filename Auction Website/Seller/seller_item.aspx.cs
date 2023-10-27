@@ -22,8 +22,15 @@ namespace Auction_Website.Seller
             if (!IsPostBack)
             {
                 Session["breadCrum"] = "Item";
-                getItem();
 
+            }
+            if (Session["SellerId"] == null)
+            {
+                Response.Redirect("seller_sign_in.aspx");
+            }
+            else
+            {
+                getItem();
             }
         }
 
@@ -38,7 +45,7 @@ namespace Auction_Website.Seller
             cmd.Parameters.AddWithValue("@Item_id", ItemId);
             cmd.Parameters.AddWithValue("@name", txtName.Text.Trim());
             cmd.Parameters.AddWithValue("@description", txtDescription.Text.Trim());
-            cmd.Parameters.AddWithValue("@seller_id", ddlSellerName.SelectedValue);
+            cmd.Parameters.AddWithValue("@seller_id", Session["SellerId"]);
             cmd.Parameters.AddWithValue("@starting_bid", txtStartingBid.Text.Trim());
             cmd.Parameters.AddWithValue("@minimum_bid_increase", txtMinimumBidIncrease.Text.Trim());
             cmd.Parameters.AddWithValue("@start_date", calStart.SelectedDate.ToString("yyyy-MM-dd"));
@@ -102,7 +109,6 @@ namespace Auction_Website.Seller
             txtName.Text = string.Empty;
             txtDescription.Text = string.Empty;
             ddlCategory.ClearSelection();
-            ddlSellerName.ClearSelection();
             txtMinimumBidIncrease.Text = string.Empty;
             txtStartingBid.Text = string.Empty;
             hdnId.Value = "0";
@@ -115,6 +121,7 @@ namespace Auction_Website.Seller
             con = new SqlConnection(Connection.GetConnectionString());
             cmd = new SqlCommand("Item_Crud", con);
             cmd.Parameters.AddWithValue("@Action", "SELECT");
+            cmd.Parameters.AddWithValue("@seller_id", Session["SellerId"]);
             cmd.CommandType = CommandType.StoredProcedure;
             sda = new SqlDataAdapter(cmd);
             dt = new DataTable();
@@ -142,7 +149,6 @@ namespace Auction_Website.Seller
                 txtStartingBid.Text = dt.Rows[0]["Starting_bid"].ToString();
                 txtMinimumBidIncrease.Text = dt.Rows[0]["Minimum_bid_increase"].ToString();
                 ddlCategory.SelectedValue = dt.Rows[0]["Category_id"].ToString();
-                ddlSellerName.SelectedValue = dt.Rows[0]["Seller_id"].ToString();
 
 
                 imgItem.ImageUrl = string.IsNullOrEmpty(dt.Rows[0]["ImageUrl"].ToString()) ? "../Images/No_image.png" : "../" + dt.Rows[0]["ImageUrl"].ToString();

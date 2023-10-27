@@ -14,6 +14,10 @@ namespace Auction_Website.Admin
             if (!IsPostBack)
             {
                 Session["breadCrum"] = "";
+                if (Session["admin"] == null)
+                {
+                    Response.Redirect("../User/user_sign_in.aspx");
+                }
             }
 
         }

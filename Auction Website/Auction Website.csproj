@@ -71,7 +71,6 @@
     <Content Include="Admin\admin_dashboard.aspx" />
     <Content Include="Admin\admin_item.aspx" />
     <Content Include="Admin\admin_seller.aspx" />
-    <Content Include="Admin\admin_sign_in.aspx" />
     <Content Include="Admin\admin_category.aspx" />
     <Content Include="datatables\css\dataTables.bootstrap4.min.css" />
     <Content Include="datatables\css\icon-font.min.css" />
@@ -228,6 +227,7 @@
     <Content Include="User\items.aspx" />
     <Content Include="User\item_detail.aspx" />
     <Content Include="User\my_orders.aspx" />
+    <Content Include="User\user_profile.aspx" />
     <Content Include="User\user_sign_in.aspx" />
     <Content Include="User\user_sign_up.aspx" />
     <Content Include="Web.config" />
@@ -267,13 +267,6 @@
     </Compile>
     <Compile Include="Admin\admin_seller.aspx.designer.cs">
       <DependentUpon>admin_seller.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\admin_sign_in.aspx.cs">
-      <DependentUpon>admin_sign_in.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\admin_sign_in.aspx.designer.cs">
-      <DependentUpon>admin_sign_in.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\admin_category.aspx.cs">
       <DependentUpon>admin_category.aspx</DependentUpon>
@@ -356,6 +349,13 @@
     </Compile>
     <Compile Include="User\my_orders.aspx.designer.cs">
       <DependentUpon>my_orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\user_profile.aspx.cs">
+      <DependentUpon>user_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\user_profile.aspx.designer.cs">
+      <DependentUpon>user_profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\user_sign_in.aspx.cs">
       <DependentUpon>user_sign_in.aspx</DependentUpon>

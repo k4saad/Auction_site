@@ -13,5 +13,18 @@ namespace Auction_Website.User
         {
 
         }
+
+        protected void lbLoginOrLogout_Click(object sender, EventArgs e)
+        {
+            if (Session["BuyerId"] == null)
+            {
+                Response.Redirect("user_sign_in.aspx");
+            }
+            else
+            {
+                Session.Abandon();
+                Response.Redirect("user_sign_in.aspx");
+            }
+        }
     }
 }

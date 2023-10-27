@@ -21,7 +21,14 @@ namespace Auction_Website.Admin
             if (!IsPostBack)
             {
                 Session["breadCrum"] = "Category";
-                getCategories();
+                if (Session["admin"] == null)
+                {
+                    Response.Redirect("../User/user_sign_in.aspx");
+                }
+                else
+                {
+                    getCategories();
+                }
             }
             lblMsg.Visible = false;
         }
@@ -57,8 +64,6 @@ namespace Auction_Website.Admin
             {
                 con.Close();
             }
-
-
         }
 
         private void getCategories()

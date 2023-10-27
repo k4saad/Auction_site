@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Auction_Website.Admin
+namespace Auction_Website.User
 {
-    public partial class admin_sign_in : System.Web.UI.Page
+    public partial class user_profile : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

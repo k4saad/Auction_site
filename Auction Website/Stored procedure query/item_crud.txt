@@ -1,5 +1,12 @@
-CREATE PROCEDURE [dbo].[Item_Crud]
-	@Aciton VARCHAR(10),
+USE [AuctionDB]
+GO
+/****** Object:  StoredProcedure [dbo].[Item_Crud]    Script Date: 10/27/2023 9:58:14 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[Item_Crud]
+	@Action VARCHAR(10),
 	@Item_id INT = NULL,
 	@name VARCHAR(100) = NULL,
 	@description VARCHAR(MAX) = NULL,
@@ -16,21 +23,21 @@ BEGIN
 	SET NOCOUNT ON;
 	
 	--SELECT
-	IF @Aciton = 'SELECT'
+	IF @Action = 'SELECT'
 	BEGIN
-		SELECT i.*, c.name AS CategoryName FROM dbo.Item i
-		INNER JOIN dbo.Category c ON c.Category_id = i.Category_id ORDER BY i.Item_id
+		SELECT dbo.Item.*, dbo.Category.name AS CategoryName FROM dbo.Item
+		INNER JOIN dbo.Category ON dbo.Category.Category_id = dbo.Item.Category_id WHERE Seller_id = @seller_id ORDER BY dbo.Item.Item_id
 	END
 
 	--INSERT
-	IF @Aciton = 'INSERT'
+	IF @Action = 'INSERT'
 		BEGIN
-			INSERT INTO dbo.Item(Name, Description, ImageUrl, Seller_id, Starting_bid, Minimum_bid_increase, Start_date, End_date,Category_id)
-			VALUES(@name, @description, @ImageUrl, @seller_id, @starting_bid, @minimum_bid_increase, @start_date, @end_date,@category_id)
+			INSERT INTO dbo.Item(Name, Description, ImageUrl, Seller_id, Starting_bid, Minimum_bid_increase, Start_date, End_date, Category_id)
+			VALUES(@name, @description, @ImageUrl, @seller_id, @starting_bid, @minimum_bid_increase, @start_date, @end_date, @category_id)
 		END
 
 	--UPDATE
-	IF @Aciton = 'UPDATE'
+	IF @Action = 'UPDATE'
 		BEGIN
 			DECLARE @UPDATE_IMAGE VARCHAR(20)
 			SELECT @UPDATE_IMAGE = (CASE WHEN @ImageUrl IS NULL THEN 'NO' ELSE 'YES' END)
@@ -47,14 +54,31 @@ BEGIN
 					Minimum_bid_increase = @minimum_bid_increase, Start_date = @start_date, End_date = @end_date, Category_id = @category_id
 				END
 		END
-
+			
 	
-	IF @Aciton = 'DELETE'
+	IF @Action = 'DELETE'
 		BEGIN
-			DELETE FROM dbo.Item WHERE Item_id = @Item_id
+			DELETE FROM dbo.Item WHERE Item_id = @Item_id 
 		END
-	IF @Aciton = 'GETBYID'
+	IF @Action = 'GETBYID'
 		BEGIN 
 			SELECT * FROM dbo.Item where Item_id = @Item_id
 		END
+
+	--SELECT
+	IF @Action = 'ALLITEM'
+	BEGIN
+		SELECT dbo.Item.*,  dbo.Seller.Name AS SellerName , dbo.Category.name AS CategoryName FROM dbo.Item
+		INNER JOIN dbo.Category ON dbo.Category.Category_id = dbo.Item.Category_id 
+		INNER JOIN dbo.Seller ON dbo.Seller.Seller_id = dbo.Item.Seller_id
+		WHERE End_date > GETDATE()
+	END
+
+	IF @Action = 'ACTIVEITEM'
+	BEGIN
+		SELECT dbo.Item.*, dbo.Seller.Name AS SellerName , dbo.Category.name AS CategoryName FROM dbo.Item
+		INNER JOIN dbo.Category ON dbo.Category.Category_id = dbo.Item.Category_id 
+		INNER JOIN dbo.Seller ON dbo.Seller.Seller_id = dbo.Item.Seller_id 
+		WHERE Start_date < GETDATE() AND End_date > GETDATE()
+	END
 END

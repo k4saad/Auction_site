@@ -72,33 +72,37 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div>
-                                            <div>
+                                            <div class="form-floating mb-4 p-0">
                                                 <asp:TextBox ID="txtName" runat="server" CssClass="form-control" placeholder="Enter Full Name"
                                                     ToolTip="Full Name"></asp:TextBox>
+                                                <label for="txtName">Full Name</label>
                                                 <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Name is required" ControlToValidate="txtName"
                                                     foreColor="Red" Display="Dynamic" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                                 <asp:RegularExpressionValidator ID="revName" runat="server" ErrorMessage="Name must be characters"
                                                     foreColor="Red" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^[a-zA-Z\s]+$" controlToValidate="txtName"></asp:RegularExpressionValidator>
                                             </div>
-                                            <br />
-                                            <div>
+                                            
+                                            <div class="form-floating mb-4 p-0">
                                                 <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" placeholder="Enter Username"
                                                     ToolTip="Username"></asp:TextBox>
+                                                <label for="txtUsername">Username</label>
                                                 <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ErrorMessage="Username is required" ControlToValidate="txtUsername"
                                                     foreColor="Red" Display="Dynamic" SetFocusOnError="true"></asp:RequiredFieldValidator> 
                                             </div>
-                                             <br />
-                                            <div>
+                                            
+                                            <div class="form-floating mb-4 p-0">
                                                 <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Enter Email"
                                                     ToolTip="Email"></asp:TextBox>
+                                                <label for="txtEmail">Email</label>
                                                 <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ErrorMessage="Email is required" ControlToValidate="txtEmail"
                                                     foreColor="Red" Display="Dynamic" SetFocusOnError="true"></asp:RequiredFieldValidator> 
 
                                             </div>
-                                            <br />
-                                            <div>
+                                            
+                                            <div class="form-floating mb-4 p-0">
                                                 <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control" placeholder="Enter Phone Number"
                                                     ToolTip="Phone Number" TextMode="Number"></asp:TextBox>
+                                                <label for="txtPhone">Phone</label>
                                                 <asp:RequiredFieldValidator ID="rfvPhone" runat="server" ErrorMessage="Phone Number is required" ControlToValidate="txtPhone"
                                                     foreColor="Red" Display="Dynamic" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                                 <asp:RegularExpressionValidator ID="revPhone" runat="server" ErrorMessage="Phone Number must have 10 digits"
@@ -108,13 +112,17 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div>                                                                                       
-                                            <div>
+                                            <div">
                                                 <asp:FileUpload ID="fuUserImage" runat="server" CssClass="form-control" ToolTip="User Image" onchange="ImagePreview(this);"/>
+                                                
                                             </div>
                                             <br />
-                                            <div>
+                                            <br />
+
+                                            <div class="form-floating mb-4 p-0">
                                                 <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="Enter Password"
-                                                    ToolTip="/Password" TextMode ="Password"></asp:TextBox>
+                                                    ToolTip="Password" TextMode ="Password"></asp:TextBox>
+                                                <label for="txtPassword">Password</label>
                                                 <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ErrorMessage="Password is required" ControlToValidate="txtPassword"
                                                     foreColor="Red" Display="Dynamic" SetFocusOnError="true"></asp:RequiredFieldValidator> 
                                             </div>
