@@ -27,7 +27,7 @@
                                 <div class="card-block">
                                     <div class="row">                                       
                                         <div class="col-md-12 mobile-inputs">
-                                            <h4 class="sub-title">Category List</h4>
+                                            <h4 class="sub-title">Buyer List</h4>
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">
                                                     <asp:Repeater ID="rBuyer" runat="server" OnItemCommand="rBuyer_ItemCommand">

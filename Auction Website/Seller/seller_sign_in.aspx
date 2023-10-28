@@ -42,7 +42,17 @@
                     <span class="sk-inner-circle"></span>
                 </div>
             </section>
+            <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <a class="navbar-brand" href="../User/index.aspx">
+                    <strong><span>Bids</span> Bay</strong>
+                </a>
+            </div>
+        </nav>
             <main>
 
                 <section class="sign-in-form section-padding">
@@ -88,7 +98,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    
                 </section>
 
             </main>

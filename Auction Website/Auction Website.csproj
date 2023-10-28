@@ -188,6 +188,7 @@
     <Content Include="Seller\seller_item.aspx" />
     <Content Include="Seller\seller_sign_in.aspx" />
     <Content Include="Seller\seller_sign_up.aspx" />
+    <Content Include="Stored procedure query\Category_Crud.txt" />
     <Content Include="Stored procedure query\item_crud.txt" />
     <Content Include="Stored procedure query\Seller_Crud.txt" />
     <Content Include="Stored procedure query\User_Crud.txt" />

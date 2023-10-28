@@ -130,7 +130,7 @@ namespace Auction_Website.Seller
             rItem.DataBind();
         }
 
-            
+
         protected void rItem_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             lblMsg.Visible = false;

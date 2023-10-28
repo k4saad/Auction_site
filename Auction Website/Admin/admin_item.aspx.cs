@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,19 +16,19 @@ namespace Auction_Website.Admin
         SqlCommand cmd;
         SqlDataAdapter sda;
         DataTable dt;
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["breadCrum"] = "Item";
-            if (Session["admin"] == null)
-            {
-                Response.Redirect("../User/user_sign_in.aspx");
-            }
-            else
-            {
-                getItem();
-            }
+            //if (Session["admin"] == null)
+            //{
+            //    Response.Redirect("../User/user_sign_in.aspx");
+            //}
+            //else
+            //{
+            //    getItem();
+            //}
+            Session["admin"] = "admin";
+            getItem();
         }
 
         protected void rItem_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -60,9 +61,10 @@ namespace Auction_Website.Admin
         }
         private void getItem()
         {
+
             con = new SqlConnection(Connection.GetConnectionString());
             cmd = new SqlCommand("Item_Crud", con);
-            cmd.Parameters.AddWithValue("@Action", "SELECT");
+            cmd.Parameters.AddWithValue("@Action", "SELECTAD");
             cmd.CommandType = CommandType.StoredProcedure;
             sda = new SqlDataAdapter(cmd);
             dt = new DataTable();

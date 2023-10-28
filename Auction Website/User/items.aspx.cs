@@ -23,18 +23,6 @@ namespace Auction_Website.User
                 getItem();
             }
         }
-        //private void getCategories()
-        //{
-        //    con = new SqlConnection(Connection.GetConnectionString());
-        //    cmd = new SqlCommand("Category_Crud", con);
-        //    cmd.Parameters.AddWithValue("@Action", "SELECT");
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    sda = new SqlDataAdapter(cmd);
-        //    dt = new DataTable();
-        //    sda.Fill(dt);
-        //    rItem.DataSource = dt;
-        //    rItem.DataBind();
-        //}
         private void getItem()
         {
             con = new SqlConnection(Connection.GetConnectionString());
@@ -47,5 +35,7 @@ namespace Auction_Website.User
             rItem.DataSource = dt;
             rItem.DataBind();
         }
+
+
     }
 }

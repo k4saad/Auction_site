@@ -43,8 +43,12 @@
                 </a>
 
                 <div class="d-lg-none">
-                   <asp:LinkButton ID="lbLoginOrLogout2" runat="server" class="bi-person custom-icon me-3" CausesValidation="false" OnClick="lbLoginOrLogout_Click"></asp:LinkButton>
-                   <a href="my_orders.aspx" class="bi-bag custom-icon"></a>
+                   <asp:LinkButton ID="lbLoginOrLogout2" runat="server" CausesValidation="false" OnClick="lbLoginOrLogout_Click">
+                       <i class="nav-item" aria-hidden="true"></i>
+                   </asp:LinkButton>
+                    &ensp;
+
+                   <i href="my_orders.aspx" class="bi-bag custom-icon"></i>
                     
                 </div>
 
@@ -63,8 +67,12 @@
 
                     <div class="d-none d-lg-block">
                         
-                        <asp:LinkButton ID="lbLoginOrLogout" runat="server" class="bi-person custom-icon me-3" CausesValidation="false" OnClick="lbLoginOrLogout_Click"></asp:LinkButton>
-                        <a href="my_orders.aspx" class="bi-bag custom-icon"></a>
+                        <asp:LinkButton ID="lbLoginOrLogout" runat="server" CausesValidation="false" OnClick="lbLoginOrLogout_Click">
+                       <i class="nav-item" aria-hidden="true"></i>
+                   </asp:LinkButton>
+                   &ensp;
+                    
+                   <a href="my_orders.aspx" class="bi-bag custom-icon"></a>
                     </div>
                 </div>
             </div>

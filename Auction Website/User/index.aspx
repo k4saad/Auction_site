@@ -121,7 +121,7 @@
                     <ItemTemplate>
                     <div class="col-lg-4 col-12 mb-3">
                     <div class="product-thumb">
-                        <a href="item_detail.aspx">
+                        <a href='item_detail.aspx?id=<%# Eval("Item_id") %>'>
                             <img src="../<%# Utils.GetImageUrl(Eval("ImageUrl")) %>" class="img-fluid product-image" alt="">
                         </a>
 
@@ -132,7 +132,7 @@
                         <div class="product-info d-flex">
                             <div>
                                 <h5 class="product-title mb-0">
-                                    <a href="item_detail.aspx" class="product-title-link"><%# Eval("Name") %></a>
+                                    <a href='item_detail.aspx?id=<%# Eval("Item_id") %>' class="product-title-link"><%# Eval("Name") %></a>
                                 </h5>
 
                                 <p class="product-p"><b>Seller : </b><%# Eval("SellerName") %></p>

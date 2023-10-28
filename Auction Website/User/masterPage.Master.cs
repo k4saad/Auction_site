@@ -11,9 +11,17 @@ namespace Auction_Website.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["BuyerId"] == null)
+            {
+                lbLoginOrLogout.Text = "Sign In";
+                lbLoginOrLogout2.Text = "Sign In";
+            }
+            else
+            {
+                lbLoginOrLogout.Text = "Sign Out";
+                lbLoginOrLogout2.Text = "Sign Out";
+            }
         }
-
         protected void lbLoginOrLogout_Click(object sender, EventArgs e)
         {
             if (Session["BuyerId"] == null)
